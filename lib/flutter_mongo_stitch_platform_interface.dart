@@ -104,7 +104,7 @@ abstract class FlutterMongoStitchPlatform extends PlatformInterface {
   }
 
 
-  aggregate({@required String collectionName, @required String databaseName,}){
+  aggregate({@required String collectionName, @required String databaseName, List<String> pipeline}){
     throw UnimplementedError('aggregate() has not been implemented.');
   }
 
