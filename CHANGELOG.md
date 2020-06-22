@@ -1,3 +1,5 @@
-## [0.0.1] - TODO: Add release date.
+## [1.0.0]
 
-* TODO: Describe initial release.
+* Initial release.
+* Using the common PlatformInterface code from plugin_platform_interface.
+
