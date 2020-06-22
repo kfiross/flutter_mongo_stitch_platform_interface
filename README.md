@@ -1,0 +1,1 @@
+# flutter_mongo_stitch_platform_interface
