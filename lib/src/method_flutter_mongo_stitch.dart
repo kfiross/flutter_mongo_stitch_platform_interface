@@ -236,4 +236,16 @@ class MethodChannelFlutterMongoStitch extends FlutterMongoStitchPlatform {
 
     return result;
   }
+
+  @override
+  Future setupWatchCollection(String collectionName, String databaseName,
+      {List<String> ids, bool asObjectIds, String filter}) async{
+    await _channel.invokeMethod('setupWatchCollection', {
+      'database_name': databaseName,
+      'collection_name': collectionName,
+      'filter': filter,
+      'ids': ids,
+      'as_object_ids': asObjectIds
+    });
+  }
 }

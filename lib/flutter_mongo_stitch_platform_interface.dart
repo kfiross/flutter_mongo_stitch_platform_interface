@@ -153,5 +153,10 @@ abstract class FlutterMongoStitchPlatform extends PlatformInterface {
     throw UnimplementedError('callFunction() has not been implemented.');
   }
 
+  /// Web-specific
+  Future setupWatchCollection(String collectionName, String databaseName, {List<String> ids, bool asObjectIds, String filter}) async {
+    throw UnimplementedError('setupWatchCollection() has not been implemented.');
+  }
+
 
 }
