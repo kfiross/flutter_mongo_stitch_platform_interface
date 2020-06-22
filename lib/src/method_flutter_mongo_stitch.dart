@@ -5,7 +5,6 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 import '../flutter_mongo_stitch_platform_interface.dart';
-import 'core_stitch_user.dart';
 
 const MethodChannel _channel = MethodChannel('flutter_mongo_stitch');
 
@@ -160,32 +159,32 @@ class MethodChannelFlutterMongoStitch extends FlutterMongoStitchPlatform {
   @override
   Future signInAnonymously() async {
     final result = await _channel.invokeMethod('signInAnonymously');
-    return CoreStitchUser.fromMap(result);
+    return result;
   }
 
   @override
-  Future<CoreStitchUser> signInWithUsernamePassword(
+  Future<Map> signInWithUsernamePassword(
       String username, String password) async {
     final result = await _channel.invokeMethod(
         'signInWithUsernamePassword',
         {'username': username, 'password': password});
 
-    return CoreStitchUser.fromMap(result);
+    return result;
   }
 
   @override
-  Future<CoreStitchUser> signInWithGoogle(String authCode) async{
+  Future<Map> signInWithGoogle(String authCode) async{
     final LinkedHashMap result = await _channel.invokeMethod(
         'signInWithGoogle', {'code': authCode});
-    return CoreStitchUser.fromMap(result);
+    return result;
   }
 
   @override
-  Future<CoreStitchUser> signInWithFacebook(String accessToken) async{
+  Future<Map> signInWithFacebook(String accessToken) async{
     final LinkedHashMap result = await _channel.invokeMethod(
         'signInWithFacebook', {'token': accessToken});
 
-    return CoreStitchUser.fromMap(result);
+    return result;
   }
 
   @override
@@ -211,10 +210,10 @@ class MethodChannelFlutterMongoStitch extends FlutterMongoStitchPlatform {
   }
 
   @override
-  Future<CoreStitchUser> getUser() async{
+  Future<Map> getUser() async{
     final LinkedHashMap result = await _channel.invokeMethod('getUser');
     print(result);
-    return CoreStitchUser.fromMap(result);
+    return result;
   }
 
   @override
