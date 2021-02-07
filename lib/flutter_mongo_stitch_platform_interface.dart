@@ -7,7 +7,7 @@ import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
 import 'src/method_flutter_mongo_stitch.dart';
 
-/// The interface that implementations of url_launcher must implement.
+/// The interface that implementations of flutter_mongo_stitch must implement.
 ///
 /// Platform implementations should extend this class rather than implement it as `flutter_mongo_stitch`
 /// does not consider newly added methods to be breaking changes. Extending this class
@@ -20,7 +20,8 @@ abstract class FlutterMongoStitchPlatform extends PlatformInterface {
 
   static final Object _token = Object();
 
-  static FlutterMongoStitchPlatform _instance = MethodChannelFlutterMongoStitch();
+  static FlutterMongoStitchPlatform _instance =
+      MethodChannelFlutterMongoStitch();
 
   /// The default instance of [FlutterMongoStitchPlatform] to use.
   ///
@@ -34,14 +35,10 @@ abstract class FlutterMongoStitchPlatform extends PlatformInterface {
     _instance = instance;
   }
 
-//  /// Launches the given [url]. Completes to [true] if the launch was successful.
-//  Future<bool> launch(String url) {
-//    throw UnimplementedError('launch() has not been implemented.');
-//  }
-
   Future connectToMongo(String appId) async {
     throw UnimplementedError('connectToMongo() has not been implemented.');
   }
+
   ///
 
   Future insertDocument({
@@ -60,14 +57,22 @@ abstract class FlutterMongoStitchPlatform extends PlatformInterface {
     throw UnimplementedError('insertDocuments() has not been implemented.');
   }
 
-  Future findDocuments(
-      {String collectionName, String databaseName, dynamic filter,
-        String projection, int limit, String sort}) async {
+  Future findDocuments({
+    String collectionName,
+    String databaseName,
+    dynamic filter,
+    String projection,
+    int limit,
+    String sort,
+  }) async {
     throw UnimplementedError('findDocuments() has not been implemented.');
   }
 
   Future findFirstDocument(
-      {String collectionName, String databaseName, dynamic filter, String projection}) async {
+      {String collectionName,
+      String databaseName,
+      dynamic filter,
+      String projection}) async {
     throw UnimplementedError('findFirstDocument() has not been implemented.');
   }
 
@@ -89,22 +94,24 @@ abstract class FlutterMongoStitchPlatform extends PlatformInterface {
   ///
   Future updateDocument(
       {String collectionName,
-        String databaseName,
-        String filter,
-        String update}) async {
+      String databaseName,
+      String filter,
+      String update}) async {
     throw UnimplementedError('updateDocument() has not been implemented.');
   }
 
   Future updateDocuments(
       {String collectionName,
-        String databaseName,
-        String filter,
-        String update}) async {
+      String databaseName,
+      String filter,
+      String update}) async {
     throw UnimplementedError('updateDocuments() has not been implemented.');
   }
 
-
-  aggregate({@required String collectionName, @required String databaseName, List<String> pipeline}){
+  aggregate(
+      {@required String collectionName,
+      @required String databaseName,
+      List<String> pipeline}) {
     throw UnimplementedError('aggregate() has not been implemented.');
   }
 
@@ -116,15 +123,25 @@ abstract class FlutterMongoStitchPlatform extends PlatformInterface {
 
   Future/*<CoreStitchUser>*/ signInWithUsernamePassword(
       String username, String password) async {
-    throw UnimplementedError('signInWithUsernamePassword() has not been implemented.');
+    throw UnimplementedError(
+        'signInWithUsernamePassword() has not been implemented.');
   }
 
-  Future/*<CoreStitchUser>*/ signInWithGoogle(String authCode) async{
+  Future/*<CoreStitchUser>*/ signInWithGoogle(String authCode) async {
     throw UnimplementedError('signInWithGoogle() has not been implemented.');
   }
 
-  Future/*<CoreStitchUser>*/ signInWithFacebook(String accessToken) async{
+  Future/*<CoreStitchUser>*/ signInWithFacebook(String accessToken) async {
     throw UnimplementedError('signInWithFacebook() has not been implemented.');
+  }
+
+  Future/*<CoreStitchUser>*/ signInWithCustomJwt(String accessToken) async {
+    throw UnimplementedError('signInWithCustomJwt() has not been implemented.');
+  }
+
+  Future signInWithCustomFunction(String json) async {
+    throw UnimplementedError(
+        'signInWithCustomFunction() has not been implemented.');
   }
 
   Future logout() async {
@@ -139,24 +156,25 @@ abstract class FlutterMongoStitchPlatform extends PlatformInterface {
     throw UnimplementedError('registerWithEmail() has not been implemented.');
   }
 
-  Future/*<CoreStitchUser>*/ getUser() async{
+  Future/*<CoreStitchUser>*/ getUser() async {
     throw UnimplementedError('getUser() has not been implemented.');
   }
 
   Future<bool> sendResetPasswordEmail(String email) async {
-    throw UnimplementedError('sendResetPasswordEmail() has not been implemented.');
+    throw UnimplementedError(
+        'sendResetPasswordEmail() has not been implemented.');
   }
 
   ///
 
-  Future callFunction(String name, {List args, int requestTimeout}) async{
+  Future callFunction(String name, {List args, int requestTimeout}) async {
     throw UnimplementedError('callFunction() has not been implemented.');
   }
 
   /// Web-specific
-  Future setupWatchCollection(String collectionName, String databaseName, {List<String> ids, bool asObjectIds, String filter}) async {
-    throw UnimplementedError('setupWatchCollection() has not been implemented.');
+  Future setupWatchCollection(String collectionName, String databaseName,
+      {List<String> ids, bool asObjectIds, String filter}) async {
+    throw UnimplementedError(
+        'setupWatchCollection() has not been implemented.');
   }
-
-
 }
