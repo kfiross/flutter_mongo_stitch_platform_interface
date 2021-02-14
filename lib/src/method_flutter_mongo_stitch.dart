@@ -22,7 +22,7 @@ class MethodChannelFlutterMongoStitch extends FlutterMongoStitchPlatform {
     @required String databaseName,
     @required Map<String, Object> data,
   }) async {
-    await _channel.invokeMethod('insertDocument', {
+    return await _channel.invokeMethod('insertDocument', {
       'database_name': databaseName,
       'collection_name': collectionName,
       'data': data
@@ -35,7 +35,7 @@ class MethodChannelFlutterMongoStitch extends FlutterMongoStitchPlatform {
     @required String databaseName,
     @required List<String> list,
   }) async {
-    await _channel.invokeMethod('insertDocuments', {
+    return await _channel.invokeMethod('insertDocuments', {
       'database_name': databaseName,
       'collection_name': collectionName,
       'list': list

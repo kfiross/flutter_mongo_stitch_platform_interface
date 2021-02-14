@@ -1,3 +1,6 @@
+## [1.2.1]
+* Updated `insertOne` and `insertMany` to return results of inserted ids.
+
 ## [1.2.0]
 * Added support for signing in with a custom authentication function.
 

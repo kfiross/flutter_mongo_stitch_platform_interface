@@ -1,6 +1,6 @@
 name: flutter_mongo_stitch_platform_interface
 description: A new Flutter package project.
-version: 1.2.0
+version: 1.2.1
 homepage: https://github.com/kfiross/flutter_mongo_stitch_platform_interface
 
 environment:
