@@ -1,3 +1,6 @@
+## [1.2.2]
+* Added support for signing in with Apple.
+
 ## [1.2.1]
 * Updated `insertOne` and `insertMany` to return results of inserted ids.
 

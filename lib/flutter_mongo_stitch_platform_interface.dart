@@ -144,6 +144,10 @@ abstract class FlutterMongoStitchPlatform extends PlatformInterface {
         'signInWithCustomFunction() has not been implemented.');
   }
 
+  Future signInWithApple(String json) async {
+    throw UnimplementedError('signInWithApple() has not been implemented.');
+  }
+
   Future logout() async {
     throw UnimplementedError('logout() has not been implemented.');
   }

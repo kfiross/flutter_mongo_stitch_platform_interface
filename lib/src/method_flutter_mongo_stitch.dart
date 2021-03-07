@@ -209,6 +209,14 @@ class MethodChannelFlutterMongoStitch extends FlutterMongoStitchPlatform {
   }
 
   @override
+  Future<Map> signInWithApple(String idToken) async {
+    final LinkedHashMap result =
+        await _channel.invokeMethod('signInWithApple', {'token': idToken});
+
+    return result;
+  }
+
+  @override
   Future logout() async {
     final result = await _channel.invokeMethod('logout');
 
