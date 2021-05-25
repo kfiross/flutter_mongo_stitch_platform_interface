@@ -1,3 +1,6 @@
+## [2.0.0-nullsafety.0]
+* Migrate into Null-Safety
+
 ## [1.2.2]
 * Added support for signing in with Apple.
 

@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'dart:collection';
 
-import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 import '../flutter_mongo_stitch_platform_interface.dart';
@@ -18,9 +17,9 @@ class MethodChannelFlutterMongoStitch extends FlutterMongoStitchPlatform {
   ///
   @override
   Future insertDocument({
-    @required String collectionName,
-    @required String databaseName,
-    @required Map<String, Object> data,
+    required String collectionName,
+    required String databaseName,
+    required Map<String, Object> data,
   }) async {
     return await _channel.invokeMethod('insertDocument', {
       'database_name': databaseName,
@@ -31,9 +30,9 @@ class MethodChannelFlutterMongoStitch extends FlutterMongoStitchPlatform {
 
   @override
   Future insertDocuments({
-    @required String collectionName,
-    @required String databaseName,
-    @required List<String> list,
+    required String collectionName,
+    required String databaseName,
+    required List<String> list,
   }) async {
     return await _channel.invokeMethod('insertDocuments', {
       'database_name': databaseName,
@@ -44,12 +43,12 @@ class MethodChannelFlutterMongoStitch extends FlutterMongoStitchPlatform {
 
   @override
   Future findDocuments(
-      {String collectionName,
-      String databaseName,
+      {String? collectionName,
+      String? databaseName,
       dynamic filter,
-      String projection,
-      int limit,
-      String sort}) async {
+      String? projection,
+      int? limit,
+      String? sort}) async {
     final result = await _channel.invokeMethod('findDocuments', {
       'database_name': databaseName,
       'collection_name': collectionName,
@@ -64,10 +63,10 @@ class MethodChannelFlutterMongoStitch extends FlutterMongoStitchPlatform {
 
   @override
   Future findFirstDocument(
-      {String collectionName,
-      String databaseName,
+      {String? collectionName,
+      String? databaseName,
       dynamic filter,
-      String projection}) async {
+      String? projection}) async {
     final result = await _channel.invokeMethod('findDocument', {
       'database_name': databaseName,
       'collection_name': collectionName,
@@ -80,7 +79,7 @@ class MethodChannelFlutterMongoStitch extends FlutterMongoStitchPlatform {
 
   @override
   Future deleteDocument(
-      {String collectionName, String databaseName, dynamic filter}) async {
+      {String? collectionName, String? databaseName, dynamic filter}) async {
     final result = await _channel.invokeMethod('deleteDocument', {
       'database_name': databaseName,
       'collection_name': collectionName,
@@ -92,7 +91,7 @@ class MethodChannelFlutterMongoStitch extends FlutterMongoStitchPlatform {
 
   @override
   Future deleteDocuments(
-      {String collectionName, String databaseName, dynamic filter}) async {
+      {String? collectionName, String? databaseName, dynamic filter}) async {
     final result = await _channel.invokeMethod('deleteDocuments', {
       'database_name': databaseName,
       'collection_name': collectionName,
@@ -104,7 +103,7 @@ class MethodChannelFlutterMongoStitch extends FlutterMongoStitchPlatform {
 
   @override
   Future countDocuments(
-      {String collectionName, String databaseName, dynamic filter}) async {
+      {String? collectionName, String? databaseName, dynamic filter}) async {
     final size = await _channel.invokeMethod('countDocuments', {
       'database_name': databaseName,
       'collection_name': collectionName,
@@ -117,10 +116,10 @@ class MethodChannelFlutterMongoStitch extends FlutterMongoStitchPlatform {
   ///
   @override
   Future updateDocument(
-      {String collectionName,
-      String databaseName,
-      String filter,
-      String update}) async {
+      {String? collectionName,
+      String? databaseName,
+      String? filter,
+      String? update}) async {
     final results = await _channel.invokeMethod('updateDocument', {
       'database_name': databaseName,
       'collection_name': collectionName,
@@ -133,10 +132,10 @@ class MethodChannelFlutterMongoStitch extends FlutterMongoStitchPlatform {
 
   @override
   Future updateDocuments(
-      {String collectionName,
-      String databaseName,
-      String filter,
-      String update}) async {
+      {String? collectionName,
+      String? databaseName,
+      String? filter,
+      String? update}) async {
     final results = await _channel.invokeMethod('updateDocuments', {
       'database_name': databaseName,
       'collection_name': collectionName,
@@ -149,9 +148,9 @@ class MethodChannelFlutterMongoStitch extends FlutterMongoStitchPlatform {
 
   @override
   aggregate(
-      {@required String collectionName,
-      @required String databaseName,
-      List<String> pipeline}) async {
+      {required String collectionName,
+      required String databaseName,
+      List<String>? pipeline}) async {
     final results = await _channel.invokeMethod('aggregate', {
       'database_name': databaseName,
       'collection_name': collectionName,
@@ -169,7 +168,7 @@ class MethodChannelFlutterMongoStitch extends FlutterMongoStitchPlatform {
   }
 
   @override
-  Future<Map> signInWithUsernamePassword(
+  Future<Map?> signInWithUsernamePassword(
       String username, String password) async {
     final result = await _channel.invokeMethod('signInWithUsernamePassword',
         {'username': username, 'password': password});
@@ -178,39 +177,39 @@ class MethodChannelFlutterMongoStitch extends FlutterMongoStitchPlatform {
   }
 
   @override
-  Future<Map> signInWithGoogle(String authCode) async {
-    final LinkedHashMap result =
+  Future<Map?> signInWithGoogle(String authCode) async {
+    final LinkedHashMap? result =
         await _channel.invokeMethod('signInWithGoogle', {'code': authCode});
     return result;
   }
 
   @override
-  Future<Map> signInWithFacebook(String accessToken) async {
-    final LinkedHashMap result = await _channel
+  Future<Map?> signInWithFacebook(String accessToken) async {
+    final LinkedHashMap? result = await _channel
         .invokeMethod('signInWithFacebook', {'token': accessToken});
 
     return result;
   }
 
   @override
-  Future<Map> signInWithCustomJwt(String token) async {
-    final LinkedHashMap result =
+  Future<Map?> signInWithCustomJwt(String token) async {
+    final LinkedHashMap? result =
         await _channel.invokeMethod('signInWithCustomJwt', {'token': token});
 
     return result;
   }
 
   @override
-  Future<Map> signInWithCustomFunction(String json) async {
-    final LinkedHashMap result =
+  Future<Map?> signInWithCustomFunction(String json) async {
+    final LinkedHashMap? result =
         await _channel.invokeMethod('signInWithCustomFunction', {'json': json});
 
     return result;
   }
 
   @override
-  Future<Map> signInWithApple(String idToken) async {
-    final LinkedHashMap result =
+  Future<Map?> signInWithApple(String idToken) async {
+    final LinkedHashMap? result =
         await _channel.invokeMethod('signInWithApple', {'token': idToken});
 
     return result;
@@ -231,7 +230,7 @@ class MethodChannelFlutterMongoStitch extends FlutterMongoStitchPlatform {
   }
 
   @override
-  Future<bool> registerWithEmail(String email, String password) async {
+  Future<bool?> registerWithEmail(String email, String password) async {
     final result = await _channel.invokeMethod(
         'registerWithEmail', {'email': email, 'password': password});
 
@@ -239,14 +238,14 @@ class MethodChannelFlutterMongoStitch extends FlutterMongoStitchPlatform {
   }
 
   @override
-  Future<Map> getUser() async {
-    final LinkedHashMap result = await _channel.invokeMethod('getUser');
+  Future<Map?> getUser() async {
+    final LinkedHashMap? result = await _channel.invokeMethod('getUser');
     print(result);
     return result;
   }
 
   @override
-  Future<bool> sendResetPasswordEmail(String email) async {
+  Future<bool?> sendResetPasswordEmail(String email) async {
     final result =
         await _channel.invokeMethod('sendResetPasswordEmail', {'email': email});
 
@@ -255,7 +254,7 @@ class MethodChannelFlutterMongoStitch extends FlutterMongoStitchPlatform {
 
   ///
   @override
-  Future callFunction(String name, {List args, int requestTimeout}) async {
+  Future callFunction(String name, {List? args, int? requestTimeout}) async {
     final result = _channel.invokeMethod('callFunction',
         {"name": name, "args": args, "timeout": requestTimeout});
 
@@ -264,7 +263,7 @@ class MethodChannelFlutterMongoStitch extends FlutterMongoStitchPlatform {
 
   @override
   Future setupWatchCollection(String collectionName, String databaseName,
-      {List<String> ids, bool asObjectIds, String filter}) async {
+      {List<String>? ids, bool? asObjectIds, String? filter}) async {
     await _channel.invokeMethod('setupWatchCollection', {
       'database_name': databaseName,
       'collection_name': collectionName,

@@ -2,7 +2,6 @@ library flutter_mongo_stitch_platform_interface;
 
 import 'dart:async';
 
-import 'package:flutter/foundation.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
 import 'src/method_flutter_mongo_stitch.dart';
@@ -42,76 +41,76 @@ abstract class FlutterMongoStitchPlatform extends PlatformInterface {
   ///
 
   Future insertDocument({
-    @required String collectionName,
-    @required String databaseName,
-    @required Map<String, Object> data,
+    required String collectionName,
+    required String databaseName,
+    required Map<String, Object> data,
   }) async {
     throw UnimplementedError('insertDocument() has not been implemented.');
   }
 
   Future insertDocuments({
-    @required String collectionName,
-    @required String databaseName,
-    @required List<String> list,
+    required String collectionName,
+    required String databaseName,
+    required List<String> list,
   }) async {
     throw UnimplementedError('insertDocuments() has not been implemented.');
   }
 
   Future findDocuments({
-    String collectionName,
-    String databaseName,
+    String? collectionName,
+    String? databaseName,
     dynamic filter,
-    String projection,
-    int limit,
-    String sort,
+    String? projection,
+    int? limit,
+    String? sort,
   }) async {
     throw UnimplementedError('findDocuments() has not been implemented.');
   }
 
   Future findFirstDocument(
-      {String collectionName,
-      String databaseName,
+      {String? collectionName,
+      String? databaseName,
       dynamic filter,
-      String projection}) async {
+      String? projection}) async {
     throw UnimplementedError('findFirstDocument() has not been implemented.');
   }
 
   Future deleteDocument(
-      {String collectionName, String databaseName, dynamic filter}) async {
+      {String? collectionName, String? databaseName, dynamic filter}) async {
     throw UnimplementedError('deleteDocument() has not been implemented.');
   }
 
   Future deleteDocuments(
-      {String collectionName, String databaseName, dynamic filter}) async {
+      {String? collectionName, String? databaseName, dynamic filter}) async {
     throw UnimplementedError('deleteDocuments() has not been implemented.');
   }
 
   Future countDocuments(
-      {String collectionName, String databaseName, dynamic filter}) async {
+      {String? collectionName, String? databaseName, dynamic filter}) async {
     throw UnimplementedError('countDocuments() has not been implemented.');
   }
 
   ///
   Future updateDocument(
-      {String collectionName,
-      String databaseName,
-      String filter,
-      String update}) async {
+      {String? collectionName,
+      String? databaseName,
+      String? filter,
+      String? update}) async {
     throw UnimplementedError('updateDocument() has not been implemented.');
   }
 
   Future updateDocuments(
-      {String collectionName,
-      String databaseName,
-      String filter,
-      String update}) async {
+      {String? collectionName,
+      String? databaseName,
+      String? filter,
+      String? update}) async {
     throw UnimplementedError('updateDocuments() has not been implemented.');
   }
 
   aggregate(
-      {@required String collectionName,
-      @required String databaseName,
-      List<String> pipeline}) {
+      {required String collectionName,
+      required String databaseName,
+      List<String>? pipeline}) {
     throw UnimplementedError('aggregate() has not been implemented.');
   }
 
@@ -156,7 +155,7 @@ abstract class FlutterMongoStitchPlatform extends PlatformInterface {
     throw UnimplementedError('getUserId() has not been implemented.');
   }
 
-  Future<bool> registerWithEmail(String email, String password) async {
+  Future<bool?> registerWithEmail(String email, String password) async {
     throw UnimplementedError('registerWithEmail() has not been implemented.');
   }
 
@@ -164,20 +163,20 @@ abstract class FlutterMongoStitchPlatform extends PlatformInterface {
     throw UnimplementedError('getUser() has not been implemented.');
   }
 
-  Future<bool> sendResetPasswordEmail(String email) async {
+  Future<bool?> sendResetPasswordEmail(String email) async {
     throw UnimplementedError(
         'sendResetPasswordEmail() has not been implemented.');
   }
 
   ///
 
-  Future callFunction(String name, {List args, int requestTimeout}) async {
+  Future callFunction(String name, {List? args, int? requestTimeout}) async {
     throw UnimplementedError('callFunction() has not been implemented.');
   }
 
   /// Web-specific
   Future setupWatchCollection(String collectionName, String databaseName,
-      {List<String> ids, bool asObjectIds, String filter}) async {
+      {List<String>? ids, bool? asObjectIds, String? filter}) async {
     throw UnimplementedError(
         'setupWatchCollection() has not been implemented.');
   }
