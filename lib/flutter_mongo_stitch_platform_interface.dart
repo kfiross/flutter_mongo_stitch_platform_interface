@@ -43,7 +43,7 @@ abstract class FlutterMongoStitchPlatform extends PlatformInterface {
   Future insertDocument({
     required String collectionName,
     required String databaseName,
-    required Map<String, Object>? data,
+    required Map<String, Object?> data,
   }) async {
     throw UnimplementedError('insertDocument() has not been implemented.');
   }

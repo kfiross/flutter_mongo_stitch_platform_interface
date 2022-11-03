@@ -19,7 +19,7 @@ class MethodChannelFlutterMongoStitch extends FlutterMongoStitchPlatform {
   Future insertDocument({
     required String collectionName,
     required String databaseName,
-    required Map<String, Object>? data,
+    required Map<String, Object?> data,
   }) async {
     return await _channel.invokeMethod('insertDocument', {
       'database_name': databaseName,
