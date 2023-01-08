@@ -2,7 +2,6 @@ import 'dart:async';
 import 'dart:collection';
 
 import 'package:flutter/services.dart';
-
 import '../flutter_mongo_stitch_platform_interface.dart';
 
 const MethodChannel _channel = MethodChannel('flutter_mongo_stitch');
