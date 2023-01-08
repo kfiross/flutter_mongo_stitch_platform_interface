@@ -216,6 +216,14 @@ class MethodChannelFlutterMongoStitch extends FlutterMongoStitchPlatform {
   }
 
   @override
+  Future<Map?> linkCredentials(Map<String, Object> credsJson) async {
+    final LinkedHashMap? result =
+    await _channel.invokeMethod('linkCredentials', credsJson);
+
+    return result;
+  }
+
+  @override
   Future logout() async {
     final result = await _channel.invokeMethod('logout');
 
