@@ -147,11 +147,11 @@ abstract class FlutterMongoStitchPlatform extends PlatformInterface {
     throw UnimplementedError('signInWithApple() has not been implemented.');
   }
 
-  Future linkCredentials(Map<String, Object> credsJson) async{
+  Future linkCredentials(Map<String, Object> credsJson) async {
     throw UnimplementedError('linkCredentials() has not been implemented.');
   }
 
-  Future isLoggedIn() async{
+  Future isLoggedIn() async {
     throw UnimplementedError('isLoggedIn() has not been implemented.');
   }
 
