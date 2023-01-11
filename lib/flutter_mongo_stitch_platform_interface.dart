@@ -151,6 +151,10 @@ abstract class FlutterMongoStitchPlatform extends PlatformInterface {
     throw UnimplementedError('linkCredentials() has not been implemented.');
   }
 
+  Future isLoggedIn() async{
+    throw UnimplementedError('isLoggedIn() has not been implemented.');
+  }
+
   Future logout() async {
     throw UnimplementedError('logout() has not been implemented.');
   }
