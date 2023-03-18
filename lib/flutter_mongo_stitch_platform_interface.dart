@@ -163,8 +163,12 @@ abstract class FlutterMongoStitchPlatform extends PlatformInterface {
     throw UnimplementedError('getUserId() has not been implemented.');
   }
 
+  Future getAccessToken() async {
+    throw UnimplementedError('getAccessToken() has not been implemented.');
+  }
+
   Future getRefreshToken() async {
-    throw UnimplementedError('etRefreshToken() has not been implemented.');
+    throw UnimplementedError('getRefreshToken() has not been implemented.');
   }
 
   Future<bool?> registerWithEmail(String email, String password) async {

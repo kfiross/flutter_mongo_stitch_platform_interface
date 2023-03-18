@@ -248,6 +248,12 @@ class MethodChannelFlutterMongoStitch extends FlutterMongoStitchPlatform {
   }
 
   @override
+  Future getAccessToken() async {
+    final result = await _channel.invokeMethod('getAccessToken');
+    return result;
+  }
+
+  @override
   Future<bool?> registerWithEmail(String email, String password) async {
     final result = await _channel.invokeMethod(
         'registerWithEmail', {'email': email, 'password': password});

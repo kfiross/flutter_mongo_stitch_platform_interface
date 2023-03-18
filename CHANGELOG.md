@@ -1,5 +1,5 @@
 ## [2.2.0]
-* Added `getRefreshToken` support
+* Added `getRefreshToken` and `getAccessToken` support
 
 ## [2.1.0]
 * Added `linkCredentails` support
@@ -7,9 +7,9 @@
 ## [2.0.0-nullsafety.1]
 * Null-Safety fixes
 
-## [2.0.0-nullsafety.0]
+# [2.0.0-nullsafety.0]
 * Migrate into Null-Safety
-insertOne
+
 ## [1.2.2]
 * Added support for signing in with Apple.
 
