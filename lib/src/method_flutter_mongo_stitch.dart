@@ -232,14 +232,18 @@ class MethodChannelFlutterMongoStitch extends FlutterMongoStitchPlatform {
   @override
   Future logout() async {
     final result = await _channel.invokeMethod('logout');
-
     return result;
   }
 
   @override
   Future getUserId() async {
     final result = await _channel.invokeMethod('getUserId');
+    return result;
+  }
 
+  @override
+  Future getRefreshToken() async {
+    final result = await _channel.invokeMethod('getRefreshToken');
     return result;
   }
 
