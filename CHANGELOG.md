@@ -1,3 +1,6 @@
+## [2.2.0]
+* Added `getRefreshToken` support
+
 ## [2.1.0]
 * Added `linkCredentails` support
 
